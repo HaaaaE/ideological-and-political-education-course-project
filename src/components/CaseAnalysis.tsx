@@ -1,28 +1,29 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiCheckCircle, FiAlertCircle, FiArrowRight } from 'react-icons/fi';
+import { IconMountain, IconFamily, IconMoney, IconHandshake, IconBook, IconRobot, IconTools, IconTree, IconGlobe } from './Icons';
 import './CaseAnalysis.css';
 
 const successMechanisms = [
   {
     title: '山水人城和谐融合',
     desc: '借助浣花溪天然水系和沿岸林地，将自然山水景观融入城市肌理，实现"城在园中，园在城中"。',
-    icon: '🏞️',
+    icon: <IconMountain size={24} />,
   },
   {
     title: '以人为本宜居导向',
     desc: '无障碍步道、亲水平台、休憩长椅等细节让不同人群都能便利使用，满足精神生活需要。',
-    icon: '👨‍👩‍👧‍👦',
+    icon: <IconFamily size={24} />,
   },
   {
     title: '生态价值创造转化',
     desc: '公园带来经济和社会效益，周边房产增值、商业配套升级，文创产业蓬勃发展。',
-    icon: '💰',
+    icon: <IconMoney size={24} />,
   },
   {
     title: '公众参与共建共享',
     desc: '通过志愿者服务、社区共治等方式吸纳公众参与管理，建立"浣花溪守护者"志愿服务队。',
-    icon: '🤝',
+    icon: <IconHandshake size={24} />,
   },
 ];
 
@@ -65,11 +66,11 @@ const problems = [
 ];
 
 const suggestions = [
-  { icon: '🤖', title: '智慧客流管理', desc: '引入线上预约、限流措施平衡客流' },
-  { icon: '🔧', title: '完善配套设施', desc: '增加直饮水点、更新健身器材' },
-  { icon: '📚', title: '加强生态宣传', desc: '增设科普长廊，开发智能导览APP' },
-  { icon: '🌳', title: '生态管控监测', desc: '划定保育核心区，完善环境监测' },
-  { icon: '🌐', title: '数字化展示', desc: '建设网上生态展厅，扩大理念传播' },
+  { icon: <IconRobot size={24} />, title: '智慧客流管理', desc: '引入线上预约、限流措施平衡客流' },
+  { icon: <IconTools size={24} />, title: '完善配套设施', desc: '增加直饮水点、更新健身器材' },
+  { icon: <IconBook size={24} />, title: '加强生态宣传', desc: '增设科普长廊，开发智能导览APP' },
+  { icon: <IconTree size={24} />, title: '生态管控监测', desc: '划定保育核心区，完善环境监测' },
+  { icon: <IconGlobe size={24} />, title: '数字化展示', desc: '建设网上生态展厅，扩大理念传播' },
 ];
 
 export default function CaseAnalysis() {
@@ -132,7 +133,7 @@ export default function CaseAnalysis() {
           transition={{ delay: 0.4, duration: 0.6 }}
         >
           <h3 className="subsection-title">
-            <span className="title-icon">📖</span>
+            <span className="title-icon"><IconBook size={24} /></span>
             经验启示
           </h3>
           <div className="experience-timeline">

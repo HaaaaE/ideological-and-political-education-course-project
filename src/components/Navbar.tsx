@@ -5,13 +5,15 @@ import { FiMenu, FiX } from 'react-icons/fi';
 import { PiLeafDuotone } from 'react-icons/pi';
 import './Navbar.css';
 
+import { IconHome, IconBook, IconSearch, IconChart, IconBulb, IconTeam } from './Icons';
+
 const navItems = [
-  { id: 'hero', label: '首页', icon: '🏠' },
-  { id: 'theory', label: '理论基础', icon: '📚' },
-  { id: 'research', label: '实地调研', icon: '🔍' },
-  { id: 'data', label: '数据分析', icon: '📊' },
-  { id: 'case', label: '案例剖析', icon: '💡' },
-  { id: 'team', label: '团队介绍', icon: '👥' },
+  { id: 'hero', label: '首页', icon: <IconHome size={18} /> },
+  { id: 'theory', label: '理论基础', icon: <IconBook size={18} /> },
+  { id: 'research', label: '实地调研', icon: <IconSearch size={18} /> },
+  { id: 'data', label: '数据分析', icon: <IconChart size={18} /> },
+  { id: 'case', label: '案例剖析', icon: <IconBulb size={18} /> },
+  { id: 'team', label: '团队介绍', icon: <IconTeam size={18} /> },
 ];
 
 export default function Navbar() {
@@ -45,7 +47,7 @@ export default function Navbar() {
         transition={{ duration: 0.6, ease: 'easeOut' }}
       >
         <div className="navbar-container">
-          <motion.div 
+          <motion.div
             className="navbar-logo"
             whileHover={{ scale: 1.05 }}
           >

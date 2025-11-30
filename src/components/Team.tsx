@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiMail, FiGithub } from 'react-icons/fi';
+import { IconAvatar, IconCrown, IconBook, IconCalendar, IconCheck, IconThought, IconLeaf } from './Icons';
 import './Team.css';
 
 const teamMembers = [
@@ -8,28 +9,28 @@ const teamMembers = [
     name: '侯 懿',
     studentId: '2023115323',
     role: '组长',
-    avatar: '🧑‍💼',
+    avatar: <IconAvatar size={48} />,
     contribution: '项目统筹、报告撰写、网站开发',
   },
   {
     name: '高年平',
     studentId: '2023112569',
     role: '组员',
-    avatar: '👨‍🎓',
+    avatar: <IconAvatar size={48} />,
     contribution: '实地调研、数据收集、问卷设计',
   },
   {
     name: '张炜乐',
     studentId: '2023112590',
     role: '组员',
-    avatar: '👨‍🎓',
+    avatar: <IconAvatar size={48} />,
     contribution: '文献研究、理论分析、报告校对',
   },
   {
     name: '颜 可',
     studentId: '2023115234',
     role: '组员',
-    avatar: '👩‍🎓',
+    avatar: <IconAvatar size={48} />,
     contribution: '摄影记录、数据可视化、排版设计',
   },
 ];
@@ -71,28 +72,28 @@ export default function Team() {
         >
           <div className="project-info-grid">
             <div className="info-item">
-              <span className="info-icon">📚</span>
+              <span className="info-icon"><IconBook size={24} /></span>
               <div className="info-content">
                 <span className="info-label">课程名称</span>
                 <span className="info-value">{projectInfo.course}</span>
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">👨‍🏫</span>
+              <span className="info-icon"><IconAvatar size={24} /></span>
               <div className="info-content">
                 <span className="info-label">任课教师</span>
                 <span className="info-value">{projectInfo.teacher}</span>
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">📅</span>
+              <span className="info-icon"><IconCalendar size={24} /></span>
               <div className="info-content">
                 <span className="info-label">学期</span>
                 <span className="info-value">{projectInfo.semester}</span>
               </div>
             </div>
             <div className="info-item">
-              <span className="info-icon">✅</span>
+              <span className="info-icon"><IconCheck size={24} /></span>
               <div className="info-content">
                 <span className="info-label">提交时间</span>
                 <span className="info-value">{projectInfo.submitDate}</span>
@@ -119,7 +120,7 @@ export default function Team() {
             >
               <div className="member-avatar">
                 <span>{member.avatar}</span>
-                {member.role === '组长' && <span className="leader-badge">👑</span>}
+                {member.role === '组长' && <span className="leader-badge"><IconCrown size={20} /></span>}
               </div>
               <h4 className="member-name">{member.name}</h4>
               <span className="member-id">{member.studentId}</span>
@@ -137,7 +138,7 @@ export default function Team() {
           transition={{ delay: 0.6, duration: 0.6 }}
         >
           <h3 className="reflection-title">
-            <span className="title-icon">💭</span>
+            <span className="title-icon"><IconThought size={28} /></span>
             思政体会
           </h3>
           <div className="reflection-content">
@@ -166,7 +167,7 @@ export default function Team() {
         >
           <div className="footer-content">
             <div className="footer-logo">
-              <span className="logo-emoji">🌿</span>
+              <span className="logo-emoji"><IconLeaf size={24} /></span>
               <span className="logo-text">生态文明 · 美丽中国</span>
             </div>
             <div className="footer-links">
@@ -188,8 +189,8 @@ export default function Team() {
       <div className="team-bg-decoration">
         <div className="decoration-circle circle-1"></div>
         <div className="decoration-circle circle-2"></div>
-        <div className="decoration-leaf leaf-1">🍃</div>
-        <div className="decoration-leaf leaf-2">🌿</div>
+        <div className="decoration-leaf leaf-1"><IconLeaf size={40} /></div>
+        <div className="decoration-leaf leaf-2"><IconLeaf size={30} /></div>
       </div>
     </section>
   );

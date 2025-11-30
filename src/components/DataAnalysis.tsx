@@ -1,5 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
+import { IconClipboard, IconLeaf, IconSmile, IconBulb, IconChart } from './Icons';
 import './DataAnalysis.css';
 
 // 问卷调查数据
@@ -79,10 +80,10 @@ const surveyData = [
 
 // 关键数据总结
 const keyFindings = [
-  { label: '有效样本', value: '38份', icon: '📋' },
-  { label: '生态满意度', value: '92.1%', icon: '🌿' },
-  { label: '幸福感提升', value: '86.8%', icon: '😊' },
-  { label: '理念知晓率', value: '15.8%', icon: '💡', isLow: true },
+  { label: '有效样本', value: '38份', icon: <IconClipboard size={24} /> },
+  { label: '生态满意度', value: '92.1%', icon: <IconLeaf size={24} /> },
+  { label: '幸福感提升', value: '86.8%', icon: <IconSmile size={24} /> },
+  { label: '理念知晓率', value: '15.8%', icon: <IconBulb size={24} />, isLow: true },
 ];
 
 export default function DataAnalysis() {
@@ -159,7 +160,7 @@ export default function DataAnalysis() {
                 <img src={item.image} alt={item.title} loading="lazy" />
               </div>
               <div className="chart-insight">
-                <span className="insight-icon">💡</span>
+                <span className="insight-icon"><IconBulb size={20} /></span>
                 <p>{item.insight}</p>
               </div>
               {/* 进度条 */}
@@ -182,7 +183,7 @@ export default function DataAnalysis() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ delay: 0.8, duration: 0.6 }}
         >
-          <div className="conclusion-icon">📊</div>
+          <div className="conclusion-icon"><IconChart size={32} /></div>
           <h3>调研结论</h3>
           <p>
             问卷表明浣花溪公园在<strong>生态环境</strong>、<strong>服务体验</strong>与<strong>民生幸福感</strong>方面表现突出，

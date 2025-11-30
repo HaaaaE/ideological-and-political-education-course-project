@@ -6,6 +6,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/effect-fade';
+import { IconTree, IconBird, IconScroll, IconHouse, IconCamera } from './Icons';
 import './Research.css';
 
 // 图片分类数据
@@ -52,22 +53,22 @@ const imageCategories = [
 
 const researchHighlights = [
   {
-    icon: '🌳',
+    icon: <IconTree size={28} />,
     title: '城市绿心',
     desc: '32.32公顷开放式城市森林公园',
   },
   {
-    icon: '🦢',
+    icon: <IconBird size={28} />,
     title: '生态修复',
     desc: '白鹭、灰鹭等水鸟栖息嬉戏',
   },
   {
-    icon: '📜',
+    icon: <IconScroll size={28} />,
     title: '文化融合',
     desc: '杜甫诗歌文化与现代生态结合',
   },
   {
-    icon: '🏘️',
+    icon: <IconHouse size={28} />,
     title: '社区共生',
     desc: '周边居民共享绿色福祉',
   },
@@ -227,7 +228,7 @@ export default function Research() {
           <div className="team-photo-card">
             <img src="/resource/小组合照.jpg" alt="小组合照" />
             <div className="team-photo-caption">
-              <span className="caption-icon">📸</span>
+              <span className="caption-icon"><IconCamera size={20} /></span>
               <span>小组成员实地调研合影留念</span>
             </div>
           </div>

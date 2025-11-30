@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Link } from 'react-scroll';
+import { IconArrowRight } from './Icons';
 import './Hero.css';
 
 export default function Hero() {
@@ -63,7 +64,7 @@ export default function Hero() {
               className="btn btn-primary"
             >
               <span>开始探索</span>
-              <span className="btn-icon">→</span>
+              <span className="btn-icon"><IconArrowRight size={20} /></span>
             </Link>
           </motion.div>
         </motion.div>

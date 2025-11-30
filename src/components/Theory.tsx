@@ -1,6 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { FiBook, FiTarget, FiMapPin, FiCheckCircle } from 'react-icons/fi';
+import { IconStar } from './Icons';
 import './Theory.css';
 
 const theoryCards = [
@@ -117,7 +118,7 @@ export default function Theory() {
               <p className="card-content">{card.content}</p>
               <div className="card-footer">
                 <div className="card-highlight">
-                  <span className="highlight-decoration">✦</span>
+                  <IconStar size={16} className="highlight-decoration" />
                   {card.highlight}
                 </div>
               </div>
