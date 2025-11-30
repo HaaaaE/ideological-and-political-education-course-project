@@ -1,46 +1,52 @@
+/* 引入Google Fonts和本地字体 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=LXGW+WenKai:wght@300;400;700&display=swap');
+
 /* 全局主题样式 - 绿色系配色 */
 :root {
-  /* 主色调 - 绿色系 */
-  --color-primary: #2d5a27;
-  --color-primary-light: #4a8c3f;
-  --color-primary-dark: #1e3d1a;
-  --color-primary-50: #f0f7ef;
-  --color-primary-100: #d8ebd5;
-  --color-primary-200: #b5d9ae;
-  --color-primary-300: #8cc282;
-  --color-primary-400: #6aab5c;
-  --color-primary-500: #4a8c3f;
-  --color-primary-600: #3a7032;
-  --color-primary-700: #2d5a27;
-  --color-primary-800: #244820;
-  --color-primary-900: #1e3d1a;
+  /* 主色调 - 深度森林绿 */
+  --color-primary: #1a3c34;
+  --color-primary-light: #2d5a4e;
+  --color-primary-dark: #0f2621;
+  --color-primary-50: #f2f7f6;
+  --color-primary-100: #dbece9;
+  --color-primary-200: #b8d9d3;
+  --color-primary-300: #8abeb5;
+  --color-primary-400: #5c9e92;
+  --color-primary-500: #3a7d71;
+  --color-primary-600: #2d665c;
+  --color-primary-700: #26524a;
+  --color-primary-800: #21423d;
+  --color-primary-900: #1d3834;
 
-  /* 辅助色 */
-  --color-accent: #c9a227;
-  --color-accent-light: #e6c84d;
-  --color-accent-dark: #9a7a1a;
+  /* 辅助色 - 哑光金 */
+  --color-accent: #c5a065;
+  --color-accent-light: #e0c494;
+  --color-accent-dark: #9e7d45;
 
-  /* 背景色 */
-  --color-bg-light: #fafef9;
-  --color-bg-cream: #f8f6f0;
-  --color-bg-sage: #e8efe6;
-  --color-bg-dark: #1a2e18;
+  /* 背景色 - 纸张质感 */
+  --color-bg-light: #fdfbf7;
+  --color-bg-cream: #f5f2eb;
+  --color-bg-sage: #eef2f0;
+  --color-bg-dark: #141f1d;
 
   /* 文字色 */
-  --color-text-primary: #1a2e18;
-  --color-text-secondary: #4a5d48;
-  --color-text-muted: #6b7d69;
-  --color-text-light: #f8f6f0;
+  --color-text-primary: #1c2624;
+  --color-text-secondary: #4a5955;
+  --color-text-muted: #788a85;
+  --color-text-light: #fdfbf7;
 
   /* 边框色 */
-  --color-border-light: #d8e4d6;
-  --color-border-medium: #b5c9b2;
+  --color-border-light: #e0e8e6;
+  --color-border-medium: #c2d1ce;
 
-  /* 阴影 */
-  --shadow-sm: 0 1px 3px rgba(45, 90, 39, 0.08);
-  --shadow-md: 0 4px 12px rgba(45, 90, 39, 0.12);
-  --shadow-lg: 0 8px 32px rgba(45, 90, 39, 0.16);
-  --shadow-xl: 0 16px 48px rgba(45, 90, 39, 0.2);
+  /* 阴影 - 更柔和 */
+  --shadow-sm: 0 2px 4px rgba(26, 60, 52, 0.06);
+  --shadow-md: 0 6px 16px rgba(26, 60, 52, 0.08);
+  --shadow-lg: 0 12px 32px rgba(26, 60, 52, 0.12);
+  --shadow-xl: 0 20px 48px rgba(26, 60, 52, 0.16);
+
+  /* 纹理 */
+  --bg-noise: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
 
   /* 字体 */
   --font-serif: 'Noto Serif SC', 'Source Han Serif CN', 'Songti SC', 'SimSun', serif;
@@ -65,9 +71,9 @@
   --radius-full: 9999px;
 
   /* 过渡 */
-  --transition-fast: 0.15s ease;
-  --transition-normal: 0.3s ease;
-  --transition-slow: 0.5s ease;
+  --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 
   /* 容器宽度 */
   --container-sm: 640px;
@@ -76,8 +82,7 @@
   --container-xl: 1280px;
 }
 
-/* 引入Google Fonts和本地字体 */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;500;600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&family=LXGW+WenKai:wght@300;400;700&display=swap');
+
 
 /* 全局样式重置和基础样式 */
 *,
@@ -104,7 +109,12 @@ body {
 }
 
 /* 标题使用衬线字体 */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 600;
   line-height: 1.4;
@@ -124,7 +134,9 @@ h3 {
 }
 
 /* 引用和装饰性文字使用霞鹜文楷 */
-blockquote, .quote, .decorative-text {
+blockquote,
+.quote,
+.decorative-text {
   font-family: var(--font-display);
 }
 

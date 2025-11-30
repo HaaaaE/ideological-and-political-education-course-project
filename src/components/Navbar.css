@@ -1,27 +1,39 @@
+
 .navbar {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  top: 1.5rem;
+  left: 1rem;
+  right: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  max-width: 1200px;
   z-index: 1000;
-  padding: 1rem 0;
-  transition: all 0.3s ease;
+  padding: 0.75rem 1.5rem;
+  box-sizing: border-box;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
 }
 
 .navbar.scrolled {
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(20px);
-  box-shadow: 0 4px 20px rgba(45, 90, 39, 0.1);
-  padding: 0.75rem 0;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+  padding: 0.75rem 1.5rem;
+  width: calc(100% - 1.5rem);
+  max-width: 1280px;
 }
 
 .navbar-container {
-  max-width: 1280px;
+  width: 100%;
+  max-width: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .navbar-logo {
@@ -47,12 +59,20 @@
   display: flex;
   list-style: none;
   gap: 0.5rem;
+  background: rgba(0, 0, 0, 0.03);
+  padding: 0.25rem;
+  border-radius: 999px;
+  /* 防止多项换行：保持一行并可横向滚动（移动端友好） */
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
 }
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
-  font-size: 0.95rem;
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
   font-weight: 500;
   color: var(--color-text-secondary);
   border-radius: 999px;
@@ -61,42 +81,35 @@
   position: relative;
 }
 
+.navbar-menu li {
+  /* 防止 flex 项被压缩到多行或极小宽度 */
+  flex: 0 0 auto;
+}
+
 .nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
-  transition: all 0.3s ease;
-  transform: translateX(-50%);
-  border-radius: 999px;
+  display: none;
 }
 
 .nav-link:hover {
   color: var(--color-primary);
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 60%;
+  background: rgba(255, 255, 255, 0.5);
 }
 
 .nav-link.active {
-  color: var(--color-primary);
-  background: var(--color-primary-50);
+  color: var(--color-text-light);
+  background: var(--color-primary);
+  box-shadow: 0 2px 8px rgba(26, 60, 52, 0.2);
 }
 
 .mobile-menu-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 44px;
-  height: 44px;
-  background: var(--color-primary-50);
+  width: 40px;
+  height: 40px;
+  background: transparent;
   border: none;
-  border-radius: 12px;
+  border-radius: 50%;
   cursor: pointer;
   font-size: 1.5rem;
   color: var(--color-primary);
@@ -104,7 +117,7 @@
 }
 
 .mobile-menu-btn:hover {
-  background: var(--color-primary-100);
+  background: rgba(0, 0, 0, 0.05);
 }
 
 /* Mobile Menu Overlay */
@@ -201,6 +214,18 @@
   .hide-mobile {
     display: none !important;
   }
+}
+
+/* hide horizontal scrollbar but keep scroll functionality */
+.navbar-menu::-webkit-scrollbar {
+  height: 6px;
+}
+.navbar-menu::-webkit-scrollbar-thumb {
+  background: rgba(26,60,52,0.12);
+  border-radius: 999px;
+}
+.navbar-menu::-webkit-scrollbar-track {
+  background: transparent;
 }
 
 @media (min-width: 769px) {

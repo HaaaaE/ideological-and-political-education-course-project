@@ -21,7 +21,7 @@
   padding: 2rem 1.5rem;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 8px 24px rgba(45, 90, 39, 0.08);
+  box-shadow: var(--shadow-md);
   border: 2px solid transparent;
   position: relative;
   overflow: hidden;
@@ -89,7 +89,7 @@
   background: white;
   border-radius: 20px;
   padding: 1.5rem;
-  box-shadow: 0 8px 24px rgba(45, 90, 39, 0.08);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border-light);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.25, 0.1, 0.25, 1);
@@ -206,7 +206,7 @@
   padding: 3rem;
   background: white;
   border-radius: 24px;
-  box-shadow: 0 12px 40px rgba(45, 90, 39, 0.1);
+  box-shadow: var(--shadow-xl);
   border: 1px solid var(--color-border-light);
 }
 
@@ -256,7 +256,8 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background-image: 
+  box-shadow: var(--shadow-sm);
+  background-image:
     radial-gradient(circle at 20% 30%, rgba(45, 90, 39, 0.03) 0%, transparent 50%),
     radial-gradient(circle at 80% 70%, rgba(201, 162, 39, 0.03) 0%, transparent 40%);
 }
@@ -266,19 +267,19 @@
   .data-section {
     padding: 4rem 0;
   }
-  
+
   .key-findings {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .charts-grid {
     grid-template-columns: 1fr;
   }
-  
+
   .data-conclusion {
     padding: 2rem 1.5rem;
   }
-  
+
   .conclusion-highlight {
     padding: 1rem;
   }
@@ -289,11 +290,11 @@
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
-  
+
   .finding-card {
     padding: 1.5rem 1rem;
   }
-  
+
   .finding-value {
     font-size: 1.75rem;
   }

@@ -96,9 +96,9 @@ export default function Theory() {
           ))}
         </motion.div>
 
-        {/* 理论卡片 */}
+        {/* Bento Box Grid */}
         <motion.div
-          className="theory-cards"
+          className="bento-grid"
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? 'visible' : 'hidden'}
@@ -106,20 +106,22 @@ export default function Theory() {
           {theoryCards.map((card, index) => (
             <motion.div
               key={index}
-              className="theory-card"
+              className={`bento-card card-${index + 1}`}
               variants={itemVariants}
-              whileHover={{ 
-                y: -8, 
-                boxShadow: '0 20px 40px rgba(45, 90, 39, 0.15)' 
-              }}
+              whileHover={{ y: -5 }}
             >
-              <div className="card-icon">{card.icon}</div>
-              <h3 className="card-title">{card.title}</h3>
-              <p className="card-content">{card.content}</p>
-              <div className="card-highlight">
-                <span className="highlight-decoration">✦</span>
-                {card.highlight}
+              <div className="card-header">
+                <div className="card-icon">{card.icon}</div>
+                <h3 className="card-title">{card.title}</h3>
               </div>
+              <p className="card-content">{card.content}</p>
+              <div className="card-footer">
+                <div className="card-highlight">
+                  <span className="highlight-decoration">✦</span>
+                  {card.highlight}
+                </div>
+              </div>
+              <div className="card-bg-decoration"></div>
             </motion.div>
           ))}
         </motion.div>

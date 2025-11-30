@@ -16,7 +16,7 @@
   padding: 2rem 1.5rem;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 4px 20px rgba(45, 90, 39, 0.08);
+  box-shadow: var(--shadow-md);
   border: 1px solid var(--color-border-light);
   transition: all 0.3s ease;
 }
@@ -133,7 +133,7 @@
   border-radius: 16px;
   overflow: hidden;
   aspect-ratio: 4/3;
-  box-shadow: 0 8px 24px rgba(45, 90, 39, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .image-wrapper img {
@@ -182,14 +182,14 @@
   padding: 2rem;
   background: white;
   border-radius: 20px;
-  box-shadow: 0 4px 16px rgba(45, 90, 39, 0.06);
+  box-shadow: var(--shadow-sm);
   border: 1px solid var(--color-border-light);
   transition: all 0.3s ease;
 }
 
 .content-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 12px 32px rgba(45, 90, 39, 0.12);
+  box-shadow: var(--shadow-lg);
 }
 
 .content-card h3 {
@@ -216,7 +216,7 @@
   width: 100%;
   border-radius: 24px;
   overflow: hidden;
-  box-shadow: 0 20px 60px rgba(45, 90, 39, 0.15);
+  box-shadow: var(--shadow-xl);
   background: white;
 }
 
@@ -250,19 +250,19 @@
   .research-section {
     padding: 4rem 0;
   }
-  
+
   .research-highlights {
     grid-template-columns: repeat(2, 1fr);
   }
-  
+
   .category-tabs {
     gap: 0.5rem;
   }
-  
+
   .category-tab {
     padding: 0.75rem 1.25rem;
   }
-  
+
   .gallery-swiper .swiper-button-prev,
   .gallery-swiper .swiper-button-next {
     display: none;
