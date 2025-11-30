@@ -400,38 +400,247 @@
     padding: 4rem 0;
   }
 
-  .mechanism-card {
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1.5rem;
+  .subsection-title {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
   }
 
+  /* 成功机制 - 手机端优化 */
+  .mechanisms-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .mechanism-card {
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .mechanism-icon {
+    top: 1.25rem;
+    right: 1.25rem;
+    width: 2.25rem;
+    height: 2.25rem;
+    font-size: 1rem;
+  }
+
+  .mechanism-content h4 {
+    font-size: 1.15rem;
+    padding-right: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .mechanism-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* 经验启示 - 手机端优化 */
   .experience-timeline {
-    padding-left: 3rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding-left: 0;
   }
 
   .timeline-marker {
-    left: -3rem;
+    top: 1.25rem;
+    right: 1.25rem;
+    left: auto;
+    width: 2.25rem;
+    height: 2.25rem;
+  }
+
+  .timeline-marker span {
+    font-size: 1rem;
   }
 
   .timeline-content {
-    margin-left: 0;
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
   }
 
+  .timeline-content h4 {
+    font-size: 1.15rem;
+    padding-right: 2.5rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+
+  /* 问题与不足 - 手机端优化 */
+  .problems-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+
+  .problem-card {
+    padding: 1.5rem;
+    border-radius: 16px;
+  }
+
+  .problem-card h4 {
+    font-size: 1.05rem;
+  }
+
+  .problem-card p {
+    font-size: 0.9rem;
+  }
+
+  /* 改进建议 - 手机端优化 */
   .suggestions-flow {
     flex-direction: column;
     align-items: stretch;
+    gap: 1.25rem;
   }
 
   .suggestion-item {
     flex: 1;
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
   }
 
+  .suggestion-icon {
+    width: 56px;
+    height: 56px;
+    font-size: 1.75rem;
+    margin-bottom: 0.75rem;
+  }
+
+  .suggestion-item h4 {
+    font-size: 1.05rem;
+  }
+
+  .suggestion-item p {
+    font-size: 0.88rem;
+  }
+
+  /* 核心结论 - 手机端优化 */
   .case-conclusion {
     padding: 2rem 1.5rem;
+    border-radius: 16px;
+  }
+
+  .conclusion-badge {
+    padding: 0.4rem 1.25rem;
+    font-size: 0.85rem;
+    margin-bottom: 1.25rem;
   }
 
   .case-conclusion blockquote {
+    font-size: 1rem;
+    line-height: 1.8;
+  }
+}
+
+/* 更小屏幕的额外优化 */
+@media (max-width: 480px) {
+  .case-section {
+    padding: 3rem 0;
+  }
+
+  .subsection-title {
+    font-size: 1.15rem;
+    gap: 0.5rem;
+  }
+
+  .subsection-title svg {
+    font-size: 1.1rem;
+  }
+
+  /* 成功机制 */
+  .mechanism-card {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .mechanism-icon {
+    width: 2rem;
+    height: 2rem;
+    font-size: 0.95rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .mechanism-content h4 {
     font-size: 1.05rem;
+    padding-right: 2.25rem;
+  }
+
+  .mechanism-content p {
+    font-size: 0.9rem;
+  }
+
+  /* 经验启示 */
+  .timeline-marker {
+    width: 2rem;
+    height: 2rem;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .timeline-marker span {
+    font-size: 0.9rem;
+  }
+
+  .timeline-content {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .timeline-content h4 {
+    font-size: 1.05rem;
+    padding-right: 2.25rem;
+  }
+
+  .timeline-content p {
+    font-size: 0.9rem;
+  }
+
+  /* 问题与不足 */
+  .problem-card {
+    padding: 1.25rem;
+  }
+
+  .problem-card h4 {
+    font-size: 1rem;
+  }
+
+  .problem-card p {
+    font-size: 0.88rem;
+  }
+
+  /* 改进建议 */
+  .suggestion-item {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .suggestion-icon {
+    width: 52px;
+    height: 52px;
+    font-size: 1.6rem;
+  }
+
+  .suggestion-item h4 {
+    font-size: 1rem;
+  }
+
+  .suggestion-item p {
+    font-size: 0.85rem;
+  }
+
+  /* 核心结论 */
+  .case-conclusion {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .conclusion-badge {
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+  }
+
+  .case-conclusion blockquote {
+    font-size: 0.95rem;
+    line-height: 1.75;
   }
 }

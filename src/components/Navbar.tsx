@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { FiMenu, FiX } from 'react-icons/fi';
-import { PiLeafDuotone } from 'react-icons/pi';
 import './Navbar.css';
 
-import { IconHome, IconBook, IconSearch, IconChart, IconBulb, IconTeam } from './Icons';
+import { 
+  IconHome, 
+  IconBook, 
+  IconSearch, 
+  IconChart, 
+  IconBulb, 
+  IconTeam,
+  IconMenu,
+  IconX,
+  IconLeafDuotone
+} from './Icons';
 
 const navItems = [
   { id: 'hero', label: '首页', icon: <IconHome size={18} /> },
@@ -51,7 +59,7 @@ export default function Navbar() {
             className="navbar-logo"
             whileHover={{ scale: 1.05 }}
           >
-            <PiLeafDuotone className="logo-icon" />
+            <IconLeafDuotone className="logo-icon" />
             <span className="logo-text">实践作业</span>
           </motion.div>
 
@@ -80,7 +88,7 @@ export default function Navbar() {
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileTap={{ scale: 0.95 }}
           >
-            {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+            {isMobileMenuOpen ? <IconX /> : <IconMenu />}
           </motion.button>
         </div>
       </motion.nav>
@@ -104,7 +112,7 @@ export default function Navbar() {
               onClick={(e) => e.stopPropagation()}
             >
               <div className="mobile-menu-header">
-                <PiLeafDuotone className="logo-icon" />
+                <IconLeafDuotone className="logo-icon" />
                 <span>导航菜单</span>
               </div>
               <ul className="mobile-menu-list">

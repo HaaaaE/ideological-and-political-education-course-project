@@ -1,18 +1,24 @@
 import React from 'react';
 
-
-interface IconProps {
+/**
+ * 图标组件通用属性接口
+ */
+export interface IconProps {
     className?: string;
     size?: number;
     color?: string;
 }
 
+/**
+ * SVG 图标基础组件
+ * 提供统一的 SVG 渲染和样式控制
+ */
 const SvgIcon: React.FC<IconProps & { children: React.ReactNode; viewBox?: string }> = ({
     className,
     size = 24,
-    color = "currentColor",
+    color = 'currentColor',
     children,
-    viewBox = "0 0 24 24"
+    viewBox = '0 0 24 24'
 }) => (
     <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -25,6 +31,7 @@ const SvgIcon: React.FC<IconProps & { children: React.ReactNode; viewBox?: strin
         strokeLinecap="round"
         strokeLinejoin="round"
         className={className}
+        aria-hidden="true"
     >
         {children}
     </svg>
@@ -275,5 +282,44 @@ export const IconArrowRight: React.FC<IconProps> = (props) => (
     <SvgIcon {...props}>
         <line x1="5" y1="12" x2="19" y2="12" />
         <polyline points="12 5 19 12 12 19" />
+    </SvgIcon>
+);
+
+// ============================================
+// UI Control Icons (菜单、关闭等控制图标)
+// ============================================
+
+export const IconMenu: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+    </SvgIcon>
+);
+
+export const IconX: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+    </SvgIcon>
+);
+
+export const IconAlertCircle: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <circle cx="12" cy="12" r="10" />
+        <line x1="12" y1="8" x2="12" y2="12" />
+        <line x1="12" y1="16" x2="12.01" y2="16" />
+    </SvgIcon>
+);
+
+// ============================================
+// Nature Icons (自然主题图标)
+// ============================================
+
+export const IconLeafDuotone: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props} viewBox="0 0 24 24">
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" fill="currentColor" opacity="0.2" />
+        <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+        <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
     </SvgIcon>
 );

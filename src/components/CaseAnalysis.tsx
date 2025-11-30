@@ -1,8 +1,21 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiCheckCircle, FiAlertCircle, FiArrowRight } from 'react-icons/fi';
-import { IconMountain, IconFamily, IconMoney, IconHandshake, IconBook, IconRobot, IconTools, IconTree, IconGlobe } from './Icons';
 import './CaseAnalysis.css';
+
+import { 
+  IconMountain, 
+  IconFamily, 
+  IconMoney, 
+  IconHandshake, 
+  IconBook, 
+  IconRobot, 
+  IconTools, 
+  IconTree, 
+  IconGlobe,
+  IconCheckCircle,
+  IconAlertCircle,
+  IconArrowRight
+} from './Icons';
 
 const successMechanisms = [
   {
@@ -102,7 +115,7 @@ export default function CaseAnalysis() {
           transition={{ delay: 0.2, duration: 0.6 }}
         >
           <h3 className="subsection-title">
-            <FiCheckCircle />
+            <IconCheckCircle />
             成功机制
           </h3>
           <div className="mechanisms-grid">
@@ -165,7 +178,7 @@ export default function CaseAnalysis() {
           transition={{ delay: 0.5, duration: 0.6 }}
         >
           <h3 className="subsection-title problems-title">
-            <FiAlertCircle />
+            <IconAlertCircle />
             问题与不足
           </h3>
           <div className="problems-grid">
@@ -192,7 +205,7 @@ export default function CaseAnalysis() {
           transition={{ delay: 0.7, duration: 0.6 }}
         >
           <h3 className="subsection-title">
-            <FiArrowRight />
+            <IconArrowRight />
             改进建议
           </h3>
           <div className="suggestions-flow">
