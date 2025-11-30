@@ -249,20 +249,35 @@
 }
 
 .sub-card {
-  padding: 1.5rem;
-  min-width: 160px;
+  padding: 1.5rem 2rem;
+  min-width: 140px;
+  /* 确保小卡片内文字完整显示 */
+  text-align: left;
 }
 
 .card-1 {
-  top: 20%;
-  right: 10%;
+  top: 5%;
+  right: -5%;
+  z-index: 4;
   animation: float-card 6s ease-in-out infinite;
 }
 
 .card-2 {
-  bottom: 20%;
-  left: 10%;
+  bottom: 10%;
+  left: -5%;
+  z-index: 3;
   animation: float-card 6s ease-in-out infinite 1s;
+  /* 深色背景卡片 */
+  background: var(--color-primary);
+  border-color: var(--color-primary-dark);
+}
+
+.card-2 .card-label {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.card-2 .card-value-sm {
+  color: #ffffff;
 }
 
 @keyframes float-card {
