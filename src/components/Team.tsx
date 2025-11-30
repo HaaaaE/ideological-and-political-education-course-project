@@ -1,7 +1,7 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 
-import { IconAvatar, IconCrown, IconBook, IconCalendar, IconCheck, IconThought, IconLeaf } from './Icons';
+import { IconAvatar, IconCrown, IconBook, IconCalendar, IconThought, IconLeaf } from './Icons';
 import './Team.css';
 
 const teamMembers = [
