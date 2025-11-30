@@ -11,6 +11,8 @@ const teamMembers = [
     role: '组长',
     avatar: <IconAvatar size={48} />,
     contribution: '项目统筹、报告撰写、网站开发',
+    tags: ['技术', '协调', '写作'],
+    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   },
   {
     name: '高年平',
@@ -18,6 +20,8 @@ const teamMembers = [
     role: '组员',
     avatar: <IconAvatar size={48} />,
     contribution: '实地调研、数据收集、问卷设计',
+    tags: ['调研', '数据', '设计'],
+    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
   },
   {
     name: '张炜乐',
@@ -25,6 +29,8 @@ const teamMembers = [
     role: '组员',
     avatar: <IconAvatar size={48} />,
     contribution: '文献研究、理论分析、报告校对',
+    tags: ['研究', '理论', '校对'],
+    gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
   },
   {
     name: '颜 可',
@@ -32,6 +38,8 @@ const teamMembers = [
     role: '组员',
     avatar: <IconAvatar size={48} />,
     contribution: '摄影记录、数据可视化、排版设计',
+    tags: ['摄影', '可视化', '设计'],
+    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
   },
 ];
 
@@ -116,16 +124,63 @@ export default function Team() {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ delay: 0.4 + index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -8, boxShadow: '0 20px 40px rgba(45, 90, 39, 0.15)' }}
+              whileHover={{ 
+                y: -12, 
+                transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
+              }}
             >
-              <div className="member-avatar">
-                <span>{member.avatar}</span>
-                {member.role === '组长' && <span className="leader-badge"><IconCrown size={20} /></span>}
+              {/* 渐变背景 */}
+              <div className="member-gradient" style={{ background: member.gradient }}></div>
+              
+              {/* 玻璃态容器 */}
+              <div className="member-content">
+                {/* 头像区域 */}
+                <div className="member-avatar-wrapper">
+                  <div className="member-avatar">
+                    <span>{member.avatar}</span>
+                    {member.role === '组长' && (
+                      <motion.span 
+                        className="leader-badge"
+                        animate={{ rotate: [0, 10, -10, 0] }}
+                        transition={{ duration: 2, repeat: Infinity, repeatDelay: 3 }}
+                      >
+                        <IconCrown size={20} />
+                      </motion.span>
+                    )}
+                  </div>
+                </div>
+
+                {/* 个人信息 */}
+                <div className="member-info">
+                  <h4 className="member-name">{member.name}</h4>
+                  <span className="member-id">{member.studentId}</span>
+                  <span className="member-role">{member.role}</span>
+                </div>
+
+                {/* 技能标签 */}
+                <div className="member-tags">
+                  {member.tags.map((tag, tagIndex) => (
+                    <motion.span
+                      key={tagIndex}
+                      className="member-tag"
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                      transition={{ delay: 0.5 + index * 0.1 + tagIndex * 0.05 }}
+                    >
+                      {tag}
+                    </motion.span>
+                  ))}
+                </div>
+
+                {/* 贡献描述 */}
+                <p className="member-contribution">{member.contribution}</p>
               </div>
-              <h4 className="member-name">{member.name}</h4>
-              <span className="member-id">{member.studentId}</span>
-              <span className="member-role">{member.role}</span>
-              <p className="member-contribution">{member.contribution}</p>
+
+              {/* 装饰元素 */}
+              <div className="member-decoration">
+                <div className="decoration-circle"></div>
+                <div className="decoration-line"></div>
+              </div>
             </motion.div>
           ))}
         </motion.div>
