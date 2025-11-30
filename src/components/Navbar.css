@@ -1,4 +1,3 @@
-
 .navbar {
   position: fixed;
   top: 1.5rem;
@@ -72,17 +71,17 @@
 .nav-link {
   display: block;
   padding: 0.5rem 1.25rem;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: var(--color-text-secondary);
   border-radius: 999px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
+  font-family: var(--font-sans);
 }
 
 .navbar-menu li {
-  /* 防止 flex 项被压缩到多行或极小宽度 */
   flex: 0 0 auto;
 }
 
@@ -92,13 +91,25 @@
 
 .nav-link:hover {
   color: var(--color-primary);
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(26, 60, 52, 0.05);
 }
 
 .nav-link.active {
-  color: var(--color-text-light);
-  background: var(--color-primary);
-  box-shadow: 0 2px 8px rgba(26, 60, 52, 0.2);
+  color: var(--color-primary-dark);
+  background: transparent;
+  font-weight: 600;
+}
+
+.nav-link.active::before {
+  content: '';
+  position: absolute;
+  bottom: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 2px;
+  background-color: var(--color-accent);
+  border-radius: 2px;
 }
 
 .mobile-menu-btn {
@@ -220,10 +231,12 @@
 .navbar-menu::-webkit-scrollbar {
   height: 6px;
 }
+
 .navbar-menu::-webkit-scrollbar-thumb {
-  background: rgba(26,60,52,0.12);
+  background: rgba(26, 60, 52, 0.12);
   border-radius: 999px;
 }
+
 .navbar-menu::-webkit-scrollbar-track {
   background: transparent;
 }
