@@ -210,8 +210,8 @@ img {
 }
 
 .card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 /* 按钮样式 */
@@ -236,8 +236,8 @@ img {
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
 }
 
 .btn-outline {

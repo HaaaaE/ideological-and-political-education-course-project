@@ -107,9 +107,9 @@
 }
 
 .bento-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
   border-color: rgba(26, 60, 52, 0.2);
+  transform: translateY(-2px);
 }
 
 .theory-card-1 {

@@ -33,7 +33,7 @@
   width: 600px;
   height: 600px;
   background: radial-gradient(circle, var(--color-primary-100), transparent 70%);
-  animation: float 20s infinite ease-in-out;
+  animation: gentle-float 20s infinite ease-in-out;
 }
 
 .shape-2 {
@@ -42,20 +42,8 @@
   width: 500px;
   height: 500px;
   background: radial-gradient(circle, var(--color-accent-light), transparent 70%);
-  animation: float 25s infinite ease-in-out reverse;
   opacity: 0.4;
-}
-
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-
-  50% {
-    transform: translate(30px, -30px);
-  }
+  animation: gentle-float 25s infinite ease-in-out reverse;
 }
 
 .hero-container {
@@ -148,18 +136,13 @@
 }
 
 .hero-actions .btn-primary:hover {
-  transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(26, 60, 52, 0.3);
   background: var(--color-primary-dark);
+  transform: translateY(-2px);
 }
 
 .btn-icon {
   font-size: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.hero-actions .btn-primary:hover .btn-icon {
-  transform: translateX(4px);
 }
 
 /* Right Visual */
@@ -185,18 +168,9 @@
   inset: -20px;
   border: 1px dashed rgba(197, 160, 101, 0.2);
   border-radius: 50%;
-  animation: spin 60s linear infinite;
+  animation: slow-spin 60s linear infinite;
 }
 
-@keyframes spin {
-  from {
-    transform: rotate(0deg);
-  }
-
-  to {
-    transform: rotate(360deg);
-  }
-}
 /* important */
 .visual-card {
   position: absolute;
@@ -213,12 +187,17 @@
 
 /* ========== 电脑端：主卡片（公园绿地面积）大小和位置 ========== */
 .main-card {
-  width: 280px;      /* 电脑端宽度 */
-  height: 300px;     /* 电脑端高度 */
+  width: 280px;
+  /* 电脑端宽度 */
+  height: 300px;
+  /* 电脑端高度 */
   z-index: 5;
-  top: 50%;          /* 垂直居中 */
-  left: 50%;         /* 水平居中 */
-  transform: translate(-50%, -50%);  /* 偏移实现真正居中 */
+  top: 50%;
+  /* 垂直居中 */
+  left: 50%;
+  /* 水平居中 */
+  transform: translate(-50%, -50%);
+  /* 偏移实现真正居中 */
   justify-content: flex-end;
   padding-top: 3rem;
   padding-bottom: 2.5rem;
@@ -253,23 +232,29 @@
 
 /* ========== 电脑端：小卡片通用样式 ========== */
 .sub-card {
-  padding: 1.5rem 2rem;  /* 电脑端内边距 */
-  min-width: 140px;      /* 电脑端最小宽度 */
+  padding: 1.5rem 2rem;
+  /* 电脑端内边距 */
+  min-width: 140px;
+  /* 电脑端最小宽度 */
   /* 确保小卡片内文字完整显示 */
   text-align: left;
 }
 
 /* ========== 电脑端：建设投资卡片位置 ========== */
 .card-1 {
-  top: 40px;    /* 距离容器顶部 */
-  right: 0px;     /* 距离容器右边 */
+  top: 40px;
+  /* 距离容器顶部 */
+  right: 0px;
+  /* 距离容器右边 */
   z-index: 4;
 }
 
 /* ========== 电脑端：生态等级卡片位置 ========== */
 .card-2 {
-  bottom: 40px;  /* 距离容器底部 */
-  left: 10px;       /* 距离容器左边 */
+  bottom: 40px;
+  /* 距离容器底部 */
+  left: 10px;
+  /* 距离容器左边 */
   z-index: 3;
   background: rgba(26, 60, 52, 0.75);
   border-color: rgba(26, 60, 52, 0.5);
@@ -283,17 +268,7 @@
   color: #ffffff;
 }
 
-@keyframes float-card {
 
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
 
 .card-value-sm {
   font-family: var(--font-serif);
@@ -345,43 +320,55 @@
 
   .hero-visual {
     width: 100%;
-    max-width: 350px;  /* 移动端容器最大宽度 */
-    height: 350px;     /* 移动端容器高度 */
+    max-width: 350px;
+    /* 移动端容器最大宽度 */
+    height: 350px;
+    /* 移动端容器高度 */
     margin: 0 auto;
   }
 
   /* ========== 移动端：主卡片（公园绿地面积）大小 ========== */
   .main-card {
-    width: 200px;       /* 移动端宽度 */
-    height: 200px;      /* 移动端高度 */
+    width: 200px;
+    /* 移动端宽度 */
+    height: 200px;
+    /* 移动端高度 */
     padding: 1.5rem;
     padding-top: 2rem;
   }
 
   .main-card .card-value {
-    font-size: 2.5rem;  /* 移动端字体大小 */
+    font-size: 2.5rem;
+    /* 移动端字体大小 */
   }
 
   /* ========== 移动端：小卡片通用样式 ========== */
   .sub-card {
-    padding: 1rem 1.25rem;  /* 移动端内边距 */
-    min-width: 100px;       /* 移动端最小宽度 */
+    padding: 1rem 1.25rem;
+    /* 移动端内边距 */
+    min-width: 100px;
+    /* 移动端最小宽度 */
   }
 
   .card-value-sm {
-    font-size: 1.5rem;  /* 移动端字体大小 */
+    font-size: 1.5rem;
+    /* 移动端字体大小 */
   }
 
   /* ========== 移动端：建设投资卡片位置 ========== */
   .card-1 {
-    top: 20px;     /* 移动端距离顶部 */
-    right: 0px;   /* 移动端距离右边 */
+    top: 20px;
+    /* 移动端距离顶部 */
+    right: 0px;
+    /* 移动端距离右边 */
   }
 
   /* ========== 移动端：生态等级卡片位置 ========== */
   .card-2 {
-    bottom: 20px;  /* 移动端距离底部 */
-    left: 0px;    /* 移动端距离左边 */
+    bottom: 20px;
+    /* 移动端距离底部 */
+    left: 0px;
+    /* 移动端距离左边 */
   }
 
   .scroll-indicator {

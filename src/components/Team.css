@@ -11,20 +11,10 @@
   border-radius: 24px;
   padding: 2.5rem;
   margin-bottom: 5rem;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-xl), inset 0 0 50px rgba(26, 60, 52, 0.06), inset 0 0 80px rgba(197, 160, 101, 0.04);
   border: 1px solid rgba(26, 60, 52, 0.05);
   position: relative;
   overflow: hidden;
-}
-
-.project-info-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
 }
 
 .project-info-grid {
@@ -46,7 +36,7 @@
 .info-item:hover {
   background: white;
   box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .info-icon {
@@ -94,24 +84,15 @@
 }
 
 .member-card:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: rgba(26, 60, 52, 0.15);
+  transform: translateY(-3px);
 }
 
 .member-card.leader {
   border-color: var(--color-accent);
   background: linear-gradient(180deg, #fffef5 0%, white 50%);
-}
-
-.member-card.leader::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: linear-gradient(90deg, var(--color-accent), var(--color-accent-light));
+  box-shadow: var(--shadow-md), inset 0 0 60px rgba(197, 160, 101, 0.08), inset 0 0 100px rgba(224, 196, 148, 0.05);
 }
 
 .member-avatar {
@@ -129,9 +110,9 @@
 }
 
 .member-card:hover .member-avatar {
-  transform: scale(1.1);
   background: var(--color-primary);
   color: white;
+  transform: scale(1.05);
 }
 
 .member-avatar>span:first-child {
@@ -193,19 +174,9 @@
   padding: 3rem;
   background: white;
   border-radius: 24px;
-  box-shadow: var(--shadow-xl);
+  box-shadow: var(--shadow-xl), inset 0 0 60px rgba(26, 60, 52, 0.06);
   position: relative;
   overflow: hidden;
-}
-
-.reflection-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 6px;
-  height: 100%;
-  background: linear-gradient(180deg, var(--color-primary), var(--color-primary-light));
 }
 
 .reflection-title {
@@ -302,7 +273,6 @@
 
 .footer-link:hover {
   background: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
 }
 
 .footer-copyright {

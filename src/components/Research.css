@@ -36,9 +36,9 @@
 }
 
 .highlight-item:hover {
-  transform: translateY(-8px);
   box-shadow: var(--shadow-xl);
   border-color: var(--color-primary-300);
+  transform: translateY(-3px);
 }
 
 .highlight-icon {
@@ -59,7 +59,7 @@
 .highlight-item:hover .highlight-icon {
   background: var(--color-primary);
   color: white;
-  transform: scale(1.1) rotate(5deg);
+  transform: scale(1.05);
 }
 
 .highlight-title {
@@ -102,7 +102,6 @@
 .category-tab:hover {
   border-color: var(--color-primary-300);
   background: var(--color-primary-50);
-  transform: translateY(-2px);
 }
 
 .category-tab.active {
@@ -182,9 +181,7 @@
   transition: transform 0.5s ease;
 }
 
-.image-wrapper:hover img {
-  transform: scale(1.08);
-}
+
 
 .image-overlay {
   position: absolute;
@@ -227,8 +224,8 @@
 }
 
 .content-card:hover {
-  transform: translateY(-4px);
   box-shadow: var(--shadow-lg);
+  transform: translateY(-2px);
 }
 
 .content-card h3 {
