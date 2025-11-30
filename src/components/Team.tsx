@@ -10,36 +10,24 @@ const teamMembers = [
     studentId: '2023115323',
     role: '组长',
     avatar: <IconAvatar size={48} />,
-    contribution: '项目统筹、报告撰写、网站开发',
-    tags: ['技术', '协调', '写作'],
-    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
   },
   {
     name: '高年平',
     studentId: '2023112569',
     role: '组员',
     avatar: <IconAvatar size={48} />,
-    contribution: '实地调研、数据收集、问卷设计',
-    tags: ['调研', '数据', '设计'],
-    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
   },
   {
     name: '张炜乐',
     studentId: '2023112590',
     role: '组员',
     avatar: <IconAvatar size={48} />,
-    contribution: '文献研究、理论分析、报告校对',
-    tags: ['研究', '理论', '校对'],
-    gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
   },
   {
     name: '颜 可',
     studentId: '2023115234',
     role: '组员',
     avatar: <IconAvatar size={48} />,
-    contribution: '摄影记录、数据可视化、排版设计',
-    tags: ['摄影', '可视化', '设计'],
-    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
   },
 ];
 
@@ -47,7 +35,6 @@ const projectInfo = {
   course: '习近平新时代中国特色社会主义思想概论',
   teacher: '王斌',
   semester: '2025-2026学年第1学期',
-  submitDate: '2025年11月',
 };
 
 export default function Team() {
@@ -100,13 +87,6 @@ export default function Team() {
                 <span className="info-value">{projectInfo.semester}</span>
               </div>
             </div>
-            <div className="info-item">
-              <span className="info-icon"><IconCheck size={24} /></span>
-              <div className="info-content">
-                <span className="info-label">提交时间</span>
-                <span className="info-value">{projectInfo.submitDate}</span>
-              </div>
-            </div>
           </div>
         </motion.div>
 
@@ -129,9 +109,6 @@ export default function Team() {
                 transition: { duration: 0.3, ease: [0.4, 0, 0.2, 1] }
               }}
             >
-              {/* 渐变背景 */}
-              <div className="member-gradient" style={{ background: member.gradient }}></div>
-              
               {/* 玻璃态容器 */}
               <div className="member-content">
                 {/* 头像区域 */}
@@ -156,24 +133,6 @@ export default function Team() {
                   <span className="member-id">{member.studentId}</span>
                   <span className="member-role">{member.role}</span>
                 </div>
-
-                {/* 技能标签 */}
-                <div className="member-tags">
-                  {member.tags.map((tag, tagIndex) => (
-                    <motion.span
-                      key={tagIndex}
-                      className="member-tag"
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ delay: 0.5 + index * 0.1 + tagIndex * 0.05 }}
-                    >
-                      {tag}
-                    </motion.span>
-                  ))}
-                </div>
-
-                {/* 贡献描述 */}
-                <p className="member-contribution">{member.contribution}</p>
               </div>
 
               {/* 装饰元素 */}
