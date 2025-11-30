@@ -135,6 +135,13 @@
   box-shadow: 0 4px 12px rgba(26, 60, 52, 0.2);
 }
 
+/* 桌面端：让按钮显示在左侧（第一列） */
+.hero-actions {
+  grid-column: 1;
+  grid-row: 2;
+  align-self: start;
+}
+
 .hero-actions .btn-primary:hover {
   box-shadow: 0 8px 24px rgba(26, 60, 52, 0.3);
   background: var(--color-primary-dark);
@@ -256,8 +263,8 @@
   left: 10px;
   /* 距离容器左边 */
   z-index: 3;
-  background: rgba(26, 60, 52, 0.75);
-  border-color: rgba(26, 60, 52, 0.5);
+  background: rgba(26, 60, 52, 0.9);
+  border-color: rgba(26, 60, 52, 0.7);
 }
 
 .card-2 .card-label {
@@ -308,14 +315,41 @@
     gap: 3rem;
     /* 在移动/平板上保留更多顶部空间 */
     padding-top: 8rem;
+    /* 启用flex布局以支持order属性 */
+    display: flex;
+    flex-direction: column;
   }
 
   .hero-content-left {
     margin: 0 auto;
+    /* 内容显示在顶部 */
+    order: 1;
+    /* 使hero-content-left内部也使用flex，以便控制子元素顺序 */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 让hero-actions（开始探索按钮）显示在最后 */
+  .hero-actions {
+    order: 3;
+    /* 确保按钮居中 */
+    display: flex;
+    justify-content: center;
+    /* 添加底部间距，避免太靠近屏幕底部 */
+    margin-bottom: 4rem;
+  }
+
+  /* hero-visual显示在中间 */
+  .hero-visual {
+    order: 2;
   }
 
   .title-line.indent {
     padding-left: 0;
+  }
+
+  .hero-badge {
+    align-self: center;
   }
 
   .hero-visual {

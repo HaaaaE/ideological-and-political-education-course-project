@@ -6,7 +6,6 @@ import './Hero.css';
 export default function Hero() {
   const { scrollY } = useScroll();
   const y = useTransform(scrollY, [0, 500], [0, 150]);
-  const opacity = useTransform(scrollY, [0, 300], [1, 0]);
 
   return (
     <section id="hero" className="hero">
@@ -19,7 +18,7 @@ export default function Hero() {
 
       <div className="container hero-container">
         {/* Left Content */}
-        <motion.div className="hero-content-left" style={{ opacity }}>
+        <motion.div className="hero-content-left">
           <motion.div
             className="hero-badge"
             initial={{ opacity: 0, x: -20 }}
@@ -49,24 +48,6 @@ export default function Hero() {
           >
             探索习近平生态文明思想在成都的生动实践，见证从"城市公园"到"公园城市"的伟大跨越。
           </motion.p>
-
-          <motion.div
-            className="hero-actions"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.8, duration: 0.8 }}
-          >
-            <Link
-              to="theory"
-              smooth={true}
-              offset={-80}
-              duration={800}
-              className="btn btn-primary"
-            >
-              <span>开始探索</span>
-              <span className="btn-icon"><IconArrowRight size={20} /></span>
-            </Link>
-          </motion.div>
         </motion.div>
 
         {/* Right Visual */}
@@ -96,6 +77,25 @@ export default function Hero() {
           </div>
 
           <div className="visual-circle"></div>
+        </motion.div>
+
+        {/* Action Button - now outside hero-content-left for better mobile layout control */}
+        <motion.div
+          className="hero-actions"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8, duration: 0.8 }}
+        >
+          <Link
+            to="theory"
+            smooth={true}
+            offset={-80}
+            duration={800}
+            className="btn btn-primary"
+          >
+            <span>开始探索</span>
+            <span className="btn-icon"><IconArrowRight size={20} /></span>
+          </Link>
         </motion.div>
       </div>
 

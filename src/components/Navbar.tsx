@@ -52,7 +52,7 @@ export default function Navbar() {
             whileHover={{ scale: 1.05 }}
           >
             <PiLeafDuotone className="logo-icon" />
-            <span className="logo-text">生态文明</span>
+            <span className="logo-text">实践作业</span>
           </motion.div>
 
           {/* Desktop Menu */}
