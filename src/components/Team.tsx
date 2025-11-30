@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiMail, FiGithub } from 'react-icons/fi';
+
 import { IconAvatar, IconCrown, IconBook, IconCalendar, IconCheck, IconThought, IconLeaf } from './Icons';
 import './Team.css';
 
@@ -170,16 +170,9 @@ export default function Team() {
               <span className="logo-emoji"><IconLeaf size={24} /></span>
               <span className="logo-text">生态文明 · 美丽中国</span>
             </div>
-            <div className="footer-links">
-              <a href="mailto:example@example.com" className="footer-link">
-                <FiMail /> 联系我们
-              </a>
-              <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="footer-link">
-                <FiGithub /> 项目源码
-              </a>
-            </div>
+
             <p className="footer-copyright">
-              © 2025 习近平生态文明思想成都实践调研小组 | 电子科技大学
+              © 2025 习近平生态文明思想成都实践调研小组 | 西南交通大学
             </p>
           </div>
         </motion.footer>

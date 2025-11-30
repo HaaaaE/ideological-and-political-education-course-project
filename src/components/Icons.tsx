@@ -242,6 +242,28 @@ export const IconThought: React.FC<IconProps> = (props) => (
     </SvgIcon>
 );
 
+export const IconTarget: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <circle cx="12" cy="12" r="10" />
+        <circle cx="12" cy="12" r="6" />
+        <circle cx="12" cy="12" r="2" />
+    </SvgIcon>
+);
+
+export const IconMapPin: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+        <circle cx="12" cy="10" r="3" />
+    </SvgIcon>
+);
+
+export const IconCheckCircle: React.FC<IconProps> = (props) => (
+    <SvgIcon {...props}>
+        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+        <polyline points="22 4 12 14.01 9 11.01" />
+    </SvgIcon>
+);
+
 // Misc
 export const IconStar: React.FC<IconProps> = (props) => (
     <SvgIcon {...props}>

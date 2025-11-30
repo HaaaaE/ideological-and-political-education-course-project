@@ -1,30 +1,29 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { FiBook, FiTarget, FiMapPin, FiCheckCircle } from 'react-icons/fi';
-import { IconStar } from './Icons';
+import { IconStar, IconBook, IconTarget, IconMapPin, IconCheckCircle } from './Icons';
 import './Theory.css';
 
 const theoryCards = [
   {
-    icon: <FiBook />,
+    icon: <IconBook />,
     title: '"生态惠民"价值导向',
     content: '习近平生态文明思想深刻揭示了生态环境与人民福祉的内在统一性。"发展经济是为了民生，保护生态环境同样也是为了民生"——这一重要论断打破了"环保与发展对立"的传统思维。',
     highlight: '良好生态环境是最普惠的民生福祉',
   },
   {
-    icon: <FiTarget />,
+    icon: <IconTarget />,
     title: '公园城市理念',
     content: '2018年，习近平总书记在成都考察时首次提出"公园城市"理念，强调"要突出公园城市特点，把生态价值考虑进去"，实现"城在园中、园在城中"的空间重构。',
     highlight: '人城境业和谐统一',
   },
   {
-    icon: <FiMapPin />,
+    icon: <IconMapPin />,
     title: '成都实践创新',
     content: '成都建立全国首个市级公园城市建设管理局，颁布全国首部公园城市地方性法规，构建涵盖八大维度的公园城市建设指标体系。',
     highlight: '全国公园城市示范区',
   },
   {
-    icon: <FiCheckCircle />,
+    icon: <IconCheckCircle />,
     title: '建设成效',
     content: '截至2024年底，成都全市建成各类公园1414个、绿道5327公里，人均公园绿地面积达15.3平方米，城市绿化覆盖率超45%。',
     highlight: '推窗见绿、出门入园',
@@ -107,7 +106,7 @@ export default function Theory() {
           {theoryCards.map((card, index) => (
             <motion.div
               key={index}
-              className={`bento-card card-${index + 1}`}
+              className={`bento-card theory-card-${index + 1}`}
               variants={itemVariants}
               whileHover={{ y: -5 }}
             >
