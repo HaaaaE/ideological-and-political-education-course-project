@@ -317,7 +317,7 @@
 .logo-text {
   font-family: var(--font-display);
   font-size: 1.25rem;
-  color: white;
+  color: white !important;
 }
 
 .footer-links {

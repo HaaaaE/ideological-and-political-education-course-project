@@ -181,12 +181,12 @@ export default function Team() {
         >
           <div className="footer-content">
             <div className="footer-logo">
-              <span className="logo-emoji"><IconLeaf size={24} /></span>
+              <span className="logo-emoji"><IconLeaf size={24} color="white" /></span>
               <span className="logo-text">生态文明 · 美丽中国</span>
             </div>
 
             <p className="footer-copyright">
-              © 2025 习近平生态文明思想成都实践调研小组 | 西南交通大学
+              © 2025 习近平生态文明思想实践小组 | 西南交通大学
             </p>
           </div>
         </motion.footer>
