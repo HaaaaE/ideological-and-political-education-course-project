@@ -21,8 +21,8 @@ export default function Hero() {
         <motion.div className="hero-content-left">
           <motion.div
             className="hero-badge"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
             <span className="badge-dot"></span>
