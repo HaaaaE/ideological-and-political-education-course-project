@@ -30,7 +30,6 @@ const imageCategories = [
     subtitle: '以人为本服务',
     images: [
       { src: '/resource/人文关怀/人车分流的专用步道.jpg', caption: '人车分流的专用步道' },
-      { src: '/resource/人文关怀/人车分流的专用步道2.jpg', caption: '人车分流的专用步道' },
       { src: '/resource/人文关怀/免费开水.jpg', caption: '便民免费开水供应' },
       { src: '/resource/人文关怀/好看的公共厕所.jpg', caption: '美观的公共厕所设施' },
       { src: '/resource/人文关怀/好看的公共厕所2.jpg', caption: '精心设计的公厕' },
