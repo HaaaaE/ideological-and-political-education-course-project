@@ -314,7 +314,7 @@
   font-size: 2rem;
 }
 
-.logo-text {
+.team-footer .logo-text {
   font-family: var(--font-display);
   font-size: 1.25rem;
   color: white !important;
