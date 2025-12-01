@@ -81,7 +81,7 @@
   display: flex;
   justify-content: center;
   gap: 1.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0rem;
   flex-wrap: wrap;
 }
 
@@ -296,16 +296,16 @@
   }
 
   .category-tab {
-    padding: 0.6rem 1rem;
-    min-width: 120px;
+    padding: 0.5rem 0.8rem;
+    min-width: 100px;
   }
 
   .tab-title {
-    font-size: 0.95rem;
+    font-size: 0.85rem;
   }
 
   .tab-subtitle {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
   }
 
   .gallery-swiper .swiper-button-prev,
