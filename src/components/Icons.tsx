@@ -69,10 +69,20 @@ export const IconChart: React.FC<IconProps> = (props) => (
 
 export const IconBulb: React.FC<IconProps> = (props) => (
     <SvgIcon {...props}>
+        {/* 灯泡主体 (Glass Bulb): 完美对称结构
+            1. M 15 14: 从右侧颈部开始
+            2. c 0-2 2-4 2-6: 向右上方平滑延伸至最宽处 (x=17, y=8)
+            3. a 5 5 0 1 0 -10 0: 绘制顶部半圆弧 (半径5, 从 x=17 到 x=7)
+            4. c 0 2 2 4 2 6: 向右下方平滑收缩至左侧颈部 (x=9, y=14)
+        */}
+        <path d="M15 14c0-2 2-4 2-6a5 5 0 1 0-10 0c0 2 2 4 2 6" />
+
+        {/* 灯丝 (Filament): 居中垂直线 */}
+        <line x1="12" y1="12" x2="12" y2="14" />
+
+        {/* 螺纹底座 (Base): 对称水平线 */}
         <path d="M9 18h6" />
         <path d="M10 22h4" />
-        <path d="M15.09 14c.18-.9.27-1.85.26-2.83a5.35 5.35 0 1 0-10.7 0c0 .98.09 1.93.26 2.83" />
-        <path d="M12 14v-2" />
     </SvgIcon>
 );
 
